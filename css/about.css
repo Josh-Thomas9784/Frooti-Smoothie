@@ -35,14 +35,17 @@
     height: 300px;
     width: 500px;
     margin-left: 180px;
+    position: relative;
+    overflow: hidden;
 
-    img{
-      object-fit: cover;
-      height: 100%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-
-      filter: drop-shadow(-5px -5px 0px var(--secondary));
-    };
+      height: 100%;
+      border: 0;
+    }
   }
 
   .bg{
