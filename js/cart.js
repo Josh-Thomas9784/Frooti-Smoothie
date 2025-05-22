@@ -220,3 +220,61 @@ document.getElementById('purchaseBtn').addEventListener('click', () => {
   }, 1000);
 });
 
+// Add this after the document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Name validation - only letters and spaces
+  const nameInput = document.getElementById('name');
+  nameInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+  });
+
+  // Card number validation - only numbers, max 16 digits
+  const cardNumberInput = document.getElementById('card-number');
+  cardNumberInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '');
+    // Limit to 16 digits
+    if (this.value.length > 16) {
+      this.value = this.value.slice(0, 16);
+    }
+    // Format with spaces for readability (optional)
+    // this.value = this.value.replace(/(\d{4})(?=\d)/g, '$1 ');
+  });
+
+  // CVV validation - only numbers, 3-4 digits
+  const cvvInput = document.getElementById('cvv');
+  cvvInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '');
+    // Limit to 4 digits (some cards use 3, others 4)
+    if (this.value.length > 4) {
+      this.value = this.value.slice(0, 4);
+    }
+  });
+
+  // Expiry validation - MM/YY format
+  const expiryInput = document.getElementById('expiry');
+  expiryInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^\d\/]/g, '');
+    
+    // Format as MM/YY automatically
+    if (this.value.length === 2 && !this.value.includes('/')) {
+      this.value += '/';
+    }
+    
+    // Limit month to valid values (01-12)
+    if (this.value.length === 2 && !this.value.includes('/')) {
+      const month = parseInt(this.value);
+      if (month > 12) {
+        this.value = '12';
+      }
+      if (month < 1) {
+        this.value = '01';
+      }
+    }
+    
+    // Limit total length to 5 chars (MM/YY)
+    if (this.value.length > 5) {
+      this.value = this.value.slice(0, 5);
+    }
+  });
+});
+
