@@ -42,7 +42,7 @@ function getCouponDiscount(total) {
     case 'DISCOUNT10':
       return { discount: total * 0.10, message: '10% off applied!', code };
     case 'FREEDRINK':
-      return { discount: 2.50, message: 'Free drink ($2.50) applied!', code };
+      return { discount: 3.00, message: '$3 off applied!', code };
     case 'SAVE5':
       if (total > 25) {
         return { discount: 5.00, message: 'Save $5 on orders over $25 applied!', code };
@@ -50,7 +50,7 @@ function getCouponDiscount(total) {
         return { discount: 0, message: 'Save $5 coupon requires orders over $25.', code };
       }
     case 'FREESHIP':
-      return { discount: 3.00, message: 'Free shipping applied!', code }; // example shipping cost
+      return { discount: 7.00, message: 'Free shipping applied!', code }; // example shipping cost
     default:
       return { discount: 0, message: '', code: null };
   }
