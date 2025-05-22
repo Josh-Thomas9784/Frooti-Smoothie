@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Frooti Smoothie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="pictures/icon-logo.png" type="image/icon type" />
+
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/rewards.css" />
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!--AOS-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Header icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+  />
+  <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+  <header>
+
+    <div class="NavandHeader">
+      <!-- Header logo -->
+      <a id="logo" href="index.html"><img src="pictures/Official-logo (4).png" alt="Frootie Smoothie"></a>
+
+      <!-- Header pages -->
+      <ul class="navbar">
+        <li><a class="active" id="menu">Menu</a></li>
+        <li><a class="active" id="rewards">Rewards</a></li>
+        <li><a class="active" id="about">About</a></li>
+      </ul>
+
+      <div class="main">
+        <i class="bx bx-menu" id="menu-icon"></i>
+      </div>
+    </div>
+
+    <ul class="navbar1">
+      <a class="order-button" href="menu.html">
+        ORDER
+      </a>
+
+      <button id="loginBtn"><img height="32" width="32" src="pictures/account-circle-line.svg" class="profile-icon"/></button>
+      <img id="profileIcon" alt="Profile" />
+    
+      <a href="cart.html" id="cartIcon" style="position: relative;">
+        <i class="bx bx-cart" id="cart"></i>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+    </ul>
+  </header>
+
+  <div id="rewardsContent">
+    <div id="message"></div>
+
+    <div id="message2">
+      <img src="../pictures/fruits-logo-5.png" class="logo-pic" data-aos="fade-up" data-aos-duration="500">
+       <span class="inner-style" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">Drink. Earn.</span> 
+       <p data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">Sign in to collect exclusive rewards and deals. </p>
+       <span class="button" id="loginBtn2" data-aos="fade-up" data-aos-duration="500"> <a href="#">Login</a> </span>
+
+
+      <img src="pictures/abs-leaf-smoothie.png" alt="" class="bg-abs">
+      <img src="pictures/abs-leaf-smoothie.png" alt="" class="bg-abs2">
+      <img src="pictures/abs-blueberry-smoothie.png" alt="" class="bg-abs3">
+      <img src="pictures/abs-strawberry-smoothie.png" alt="" class="bg-abs4">
+      <img src="pictures/abs-strawberry-smoothie.png" alt="" class="bg-abs5">
+    </div>
+
+    <div id="couponContainer" style="display:none;">
+
+      <div class="coupon-title">
+        <h3 class="title">My Frootie Smoothie Rewards</h3>
+
+        <p id="couponMessage"></p>
+      </div>
+
+
+      <div class="coupon-holder">
+
+        <div class="coupon" onclick="applyCoupon('DISCOUNT10')" data-code="DISCOUNT10">
+          <div class="card">
+            <div class="main">
+              <div class="co-img">
+                <img src="pictures/coupon-img1.png" alt=""/>
+              </div>
+              <div class="vertical"></div>
+              <div class="content">
+                <h2>Frootie Smoothie</h2>
+                <p>Get 10% off your first order!</p>
+                <p class="sub">Click to apply</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('FREEDRINK')" data-code="FREEDRINK">
+          <div class="card">
+            <div class="main">
+              <div class="co-img">
+                <img src="pictures/coupon-img2.png" alt=""/>
+              </div>
+              <div class="vertical"></div>
+              <div class="content">
+                <h2>Frootie Smoothie</h2>
+                <p>Get a Free Drink with Any Meal!</p>
+                <p class="sub">Click to apply</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('SAVE5')" data-code="SAVE5">
+          <div class="card">
+            <div class="main">
+              <div class="co-img">
+                <img src="pictures/coupon-img3.png" alt=""/>
+              </div>
+              <div class="vertical"></div>
+              <div class="content">
+                <h2>Frootie Smoothie</h2>
+                <p>Save $5 on orders over $25!</p>
+                <p class="sub">Click to apply</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('FREESHIP')" data-code="FREESHIP">
+          <div class="card">
+            <div class="main">
+              <div class="co-img">
+                <img src="pictures/coupon-img4.png" alt=""/>
+              </div>
+              <div class="vertical"></div>
+              <div class="content">
+                <h2>Frootie Smoothie</h2>
+                <p>Free Shipping on your order!</p>
+                <p class="sub">Click to apply</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img src="pictures/abs-leaf-smoothie.png" alt="" class="bg-abs7">
+      <img src="pictures/abs-leaf-smoothie.png" alt="" class="bg-abs8">
+      <img src="pictures/abs-blueberry-smoothie.png" alt="" class="bg-abs9">
+      <img src="pictures/abs-strawberry-smoothie.png" alt="" class="bg-abs4">
+      <img src="pictures/abs-strawberry-smoothie.png" alt="" class="bg-abs5">
+    </div>
+
+    <button id="logoutBtn" style="display:none;">Log Out</button>
+  </div>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+
+    AOS.init();
+
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBUYKfMSXTLUb_HtTQ27vMe7i5AT3QXOCY",
+      authDomain: "dev-comp-79d01.firebaseapp.com",
+      projectId: "dev-comp-79d01",
+      storageBucket: "dev-comp-79d01.firebasestorage.app",
+      messagingSenderId: "182420290038",
+      appId: "1:182420290038:web:74d0518bc8e97e2cf66fd7",
+      measurementId: "G-0M2BJ99VG9",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const profileIcon = document.getElementById("profileIcon");
+    const message = document.getElementById("message");
+    const couponContainer = document.getElementById("couponContainer");
+    const couponMessage = document.getElementById("couponMessage");
+    const message2 = document.getElementById("message2");
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    loginBtn.addEventListener("click", () => {
+      auth.signInWithPopup(provider).catch((error) => {
+        console.error("Login failed:", error);
+      });
+    });
+
+    // Add event listener for the second login button
+    const loginBtn2 = document.getElementById("loginBtn2");
+    if (loginBtn2) {
+      loginBtn2.addEventListener("click", () => {
+        auth.signInWithPopup(provider).catch((error) => {
+          console.error("Login failed:", error);
+        });
+      });
+    }
+
+    logoutBtn.addEventListener("click", () => {
+      auth.signOut().then(() => {
+        message.innerHTML =
+          ' ';
+        couponContainer.style.display = "none";
+        couponMessage.innerText = "";
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+        profileIcon.style.display = "none";
+        localStorage.removeItem("appliedCoupon");
+        message2.style.display = "block";
+      });
+    });
+
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        message.innerText = `Welcome, ${user.displayName}! `;
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+        profileIcon.src = user.photoURL;
+        profileIcon.title = user.displayName;
+        profileIcon.style.display = "inline-block";
+        couponContainer.style.display = "flex";
+        message2.style.display = "none";
+
+        // Hide previously applied coupon and show message
+        const applied = localStorage.getItem("appliedCoupon");
+        if (applied) {
+          const coupons = document.querySelectorAll(".coupon");
+          coupons.forEach((coupon) => {
+            if (coupon.dataset.code === applied) {
+              coupon.remove();
+            }
+          });
+          couponMessage.innerText = `Coupon "${applied}" already applied. Only one coupon can be used.`;
+        } else {
+          couponMessage.innerText = "";
+        }
+      } else {
+        message.innerHTML =
+          ' ';
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+        profileIcon.style.display = "none";
+        couponContainer.style.display = "none";
+        couponMessage.innerText = "";
+        message2.style.display = "block";
+      }
+    });
+
+    function applyCoupon(code) {
+      const alreadyApplied = localStorage.getItem("appliedCoupon");
+
+      if (alreadyApplied) {
+        couponMessage.innerText = `You've already applied coupon "${alreadyApplied}". Only one coupon can be used.`;
+        return;
+      }
+
+      // Create popup overlay instead of alert
+      const overlay = document.createElement('div');
+      overlay.className = 'coupon-confirmation-overlay';
+      
+      // Create popup content
+      const content = document.createElement('div');
+      content.className = 'coupon-confirmation-content';
+      content.innerHTML = `
+        <div class="confirmation-icon">
+          <i class='bx bx-check-circle'></i>
+        </div>
+        <h3>Coupon Applied!</h3>
+        <p>Coupon "${code}" has been applied to your order.</p>
+        <div class="confirmation-buttons">
+          <button id="confirmationCloseBtn">Continue Shopping</button>
+          <button id="viewCartBtn">View Cart</button>
+        </div>
+      `;
+      
+      overlay.appendChild(content);
+      document.body.appendChild(overlay);
+      
+      // Add animation classes
+      setTimeout(() => {
+        overlay.classList.add('active');
+        content.classList.add('active');
+      }, 10);
+      
+      // Close button event listener
+      document.getElementById('confirmationCloseBtn').addEventListener('click', function() {
+        overlay.classList.remove('active');
+        content.classList.remove('active');
+        
+        // Remove from DOM after animation completes
+        setTimeout(() => {
+          document.body.removeChild(overlay);
+        }, 300);
+      });
+      
+      // View cart button
+      document.getElementById('viewCartBtn').addEventListener('click', function() {
+        window.location.href = 'cart.html';
+      });
+
+      localStorage.setItem("appliedCoupon", code);
+
+      const coupons = document.querySelectorAll(".coupon");
+      coupons.forEach((coupon) => {
+        if (coupon.dataset.code === code) {
+          coupon.remove();
+        }
+      });
+
+      couponMessage.innerText = `Coupon "${code}" applied successfully.`;
+    }
+
+  </script>
+
+  <script>
+    // Update cart count dynamically -- CART
+    const cartCountElement = document.getElementById('cartCount');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.innerText = totalItems;
+  </script>
+
+  <!--JS LINKS -->
+  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

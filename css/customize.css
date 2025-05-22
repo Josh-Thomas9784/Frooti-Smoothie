@@ -1,0 +1,561 @@
+body {
+  background-color: white;
+}
+
+.customize-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+}
+
+.customize-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.back-button, .favorite-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.favorite-button.active i {
+  color: black;
+}
+
+.product-info {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.product-image-container {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-details h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  margin: 0 0 5px;
+  color: var(--secondary);
+}
+
+.product-details p {
+  margin: 5px 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.ingredients-section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.add-ins-count, .supplements-count {
+  font-size: 14px;
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 10px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ingredient-name {
+  font-family: 'Raleway', sans-serif;
+}
+
+.ingredient-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.ingredient-actions button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.customize-dropdown {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.add-ins-grid, .supplements-grid, .recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.add-in-item, .supplement-item, .recommendation-item {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.add-in-item img, .supplement-item img, .recommendation-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.add-in-item p, .supplement-item p, .recommendation-item p {
+  margin: 5px 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.calories {
+  font-size: 12px;
+  color: #666;
+}
+
+.nutrition-info {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.nutrition-info p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nutrition-info-btn {
+  background: none;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.add-to-cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 15px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.add-to-cart-btn {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.final-price {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+@media (max-width: 480px) {
+  .add-ins-grid, .supplements-grid, .recommendations-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.add-in-item, .supplement-item {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-in-item.selected, .supplement-item.selected {
+  background-color: #e6f7ff;
+  border: 1px solid var(--secondary);
+}
+
+.selection-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.swap-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.swap-modal h3 {
+  margin-top: 0;
+  font-family: 'Fredoka', sans-serif;
+  color: var(--secondary);
+}
+
+.swap-options-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.swap-option {
+  padding: 10px 15px;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.swap-option:hover {
+  background-color: #f9f9f9;
+}
+
+.close-modal {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+}
+
+.nutrition-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nutrition-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.allergen-info {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #fff3e0;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #e65100;
+}
+
+.sweetness-selector {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 30px;
+}
+
+.sweetness-btn {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sweetness-btn.active {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.recommendations-section h2 {
+  margin-bottom: 15px;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.recommendation-item {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.recommendation-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.recommendation-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.recommendation-item p {
+  margin: 8px 12px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+
+.recommendation-item p.calories {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.recommendation-item p.price {
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.recommendation-item .selection-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.recommendation-item.selected {
+  border: 2px solid var(--secondary);
+}
+
+/* Add to Cart Animation */
+.cart-animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cart-animation-overlay.active {
+  opacity: 1;
+}
+
+.cart-animation-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cart-animation-content.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cart-success-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.cart-success-icon i {
+  font-size: 40px;
+  color: white;
+}
+
+.cart-animation-content h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.cart-animation-content p {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.cart-animation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cart-animation-buttons button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-animation-buttons button:first-child {
+  background-color: #f0f0f0;
+  border: none;
+  color: #333;
+}
+
+.cart-animation-buttons button:last-child {
+  background-color: var(--secondary);
+  border: none;
+  color: white;
+}
+
+.cart-animation-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(var(--secondary-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0);
+  }
+}
+
+
+
+
+
+
+
+
+

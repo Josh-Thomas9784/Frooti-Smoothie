@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Frooti Smoothie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="pictures/icon-logo.png" type="image/icon type">
+
+  <!-- Header icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/customize.css">
+  <link rel="stylesheet" href="css/cart-animation.css">
+  <link rel="stylesheet" href="css/nutrition-modal.css">
+
+  <style>
+    .extra-charge-notification {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border-left: 4px solid #ffeeba;
+      animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .extra-charge-label {
+      color: #dc3545;
+      font-size: 0.8em;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    
+    .build-section h3 {
+      position: relative;
+    }
+    
+    .build-section h3::after {
+      content: "Extra items will incur additional charges";
+      position: absolute;
+      font-size: 0.7em;
+      font-weight: normal;
+      color: #dc3545;
+      right: 0;
+      bottom: -5px;
+    }
+    
+    /* Hide any direct nutrition information displays */
+    .nutrition-information,
+    .nutrition-facts,
+    .nutrition-data,
+    [id^="nutrition-"],
+    [class^="nutrition-"]:not(.nutrition-info-btn):not(.nutrition-facts-modal):not(.nutrition-facts-content):not(.nutrition-facts-table):not(.nutrition-facts-row):not(.nutrition-facts-close) {
+      display: none !important;
+    }
+    
+    /* Make sure our button is visible */
+    .nutrition-info-btn {
+      display: inline-block !important;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+  <header>
+
+    <div class="NavandHeader">
+      <!-- Header logo -->
+      <a id="logo" href="index.html"><img src="pictures/Official-logo (4).png" alt="Frootie Smoothie"></a>
+
+      <!-- Header pages -->
+      <ul class="navbar">
+        <li><a class="active" id="menu">Menu</a></li>
+        <li><a class="active" id="rewards">Rewards</a></li>
+        <li><a class="active" id="about">About</a></li>
+      </ul>
+
+      <div class="main">
+        <i class="bx bx-menu" id="menu-icon"></i>
+      </div>
+    </div>
+
+    <ul class="navbar1">
+      <a class="order-button" href="menu.html">
+        ORDER
+      </a>
+
+      <button id="loginBtn"><img height="32" width="32" src="pictures/account-circle-line.svg" class="profile-icon"/></button>
+      <img id="profileIcon" alt="Profile" />
+    
+      <a href="cart.html" id="cartIcon" style="position: relative;">
+        <i class="bx bx-cart" id="cart"></i>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+    </ul>
+  </header>
+
+  <main class="customize-container">
+    <div class="customize-header">
+      <a href="menu.html" class="back-button"><i class='bx bx-arrow-back'></i></a>
+    </div>
+
+    <div class="product-info">
+      <div class="product-image-container">
+        <img id="productImage" src="" alt="Product Image">
+      </div>
+      <div class="product-details">
+        <h1 id="productName"></h1>
+        <p id="productCalories"></p>
+        <p id="productDescription"></p>
+        <p class="price" id="productPrice"></p>
+      </div>
+    </div>
+
+    <div class="ingredients-section">
+      <!-- This will be populated by the buildYourOwn.js script -->
+    </div>
+
+    <div class="nutrition-info">
+      <p>Please consult a physician or health professional before adding a supplement to your smoothie, especially if you have a medical condition, are pregnant, nursing, or taking medications. Not recommended for children.</p>
+      <button class="nutrition-info-btn">NUTRITION INFO</button>
+    </div>
+
+    <div class="add-to-cart-container">
+      <button id="addToCartBtn" class="add-to-cart-btn">ADD TO CART</button>
+      <span id="finalPrice" class="final-price">$8.99</span>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/buildYourOwn.js"></script>
+  <script src="js/fixed-code.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fix navigation menu functionality
+      const menuLink = document.getElementById('menu');
+      const rewardsLink = document.getElementById('rewards');
+      const aboutLink = document.getElementById('about');
+      
+      if (menuLink) {
+        menuLink.addEventListener('click', function() {
+          window.location.href = 'menu.html';
+        });
+      }
+      
+      if (rewardsLink) {
+        rewardsLink.addEventListener('click', function() {
+          window.location.href = 'rewards.html';
+        });
+      }
+      
+      if (aboutLink) {
+        aboutLink.addEventListener('click', function() {
+          window.location.href = 'about.html';
+        });
+      }
+      
+      // Mobile menu toggle
+      let menuIcon = document.querySelector('#menu-icon');
+      let navbar = document.querySelector('.navbar');
+      
+      if (menuIcon && navbar) {
+        menuIcon.onclick = function() {
+          menuIcon.classList.toggle('bx-x');
+          navbar.classList.toggle('open');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

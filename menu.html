@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Frooti Smoothie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="pictures/icon-logo.png" type="image/icon type">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+  <header>
+
+    <div class="NavandHeader">
+      <!-- Header logo -->
+      <a id="logo" href="index.html"><img src="pictures/Official-logo (4).png" alt="Frootie Smoothie"></a>
+
+      <!-- Header pages -->
+      <ul class="navbar">
+        <li><a class="active" id="menu">Menu</a></li>
+        <li><a class="active" id="rewards">Rewards</a></li>
+        <li><a class="active" id="about">About</a></li>
+      </ul>
+
+      <div class="main">
+        <i class="bx bx-menu" id="menu-icon"></i>
+      </div>
+    </div>
+
+    <ul class="navbar1">
+      <a class="order-button" href="menu.html">
+        ORDER
+      </a>
+
+      <button id="loginBtn"><img height="32" width="32" src="pictures/account-circle-line.svg" class="profile-icon"/></button>
+      <img id="profileIcon" alt="Profile" />
+    
+      <a href="cart.html" id="cartIcon" style="position: relative;">
+        <i class="bx bx-cart" id="cart"></i>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+    </ul>
+  </header>
+
+  <main>
+    <div class="allergen-filter-container">
+      <div class="allergen-filter">
+        <div class="allergen-header" id="allergenDropdownToggle">
+          <span>Allergens</span>
+          <div class="info-icon">
+            <i class="bx bx-info-circle"></i>
+            <span class="info-tooltip">Select any allergies you have to see warnings on menu items that contain those allergens.</span>
+          </div>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+        <div class="allergen-options" id="allergenOptions" style="display: none;">
+          <label><input type="checkbox" value="peanut" class="allergen-checkbox"> Peanuts</label>
+          <label><input type="checkbox" value="treenut" class="allergen-checkbox"> Tree Nuts</label>
+          <label><input type="checkbox" value="milk" class="allergen-checkbox"> Milk</label>
+          <label><input type="checkbox" value="egg" class="allergen-checkbox"> Eggs</label>
+          <label><input type="checkbox" value="soy" class="allergen-checkbox"> Soy</label>
+          <label><input type="checkbox" value="sesame" class="allergen-checkbox"> Sesame</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Sellers Section -->
+    <section class="menu-section" id="best-sellers">
+      <h1>Best Sellers</h1>
+      <p class="section-tagline">Our Most Popular Items</p>
+      
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="pictures/1.png" alt="Strawberry Smoothie">
+          <div class="item-details">
+            <h3>Strawberry Passion</h3>
+            <p class="calories">720 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A refreshing strawberry smoothie with a hint of passionfruit.</p>
+            <a href="customize.html?name=Strawberry%20Passion&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (2).png" alt="Berry Bowl">
+          <div class="item-details">
+            <h3>Berry Bowl</h3>
+            <p class="calories">710 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A delicious bowl packed with mixed berries and granola.</p>
+            <a href="customize.html?name=Berry%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/4.png" alt="Green Smoothie">
+          <div class="item-details">
+            <h3>Green Smoothie</h3>
+            <p class="calories">580 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A vibrant green smoothie with spinach and cucumber.</p>
+            <a href="customize.html?name=Green%20Smoothie&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (11).png" alt="Avocado Salad">
+          <div class="item-details">
+            <h3>Avocado Salad</h3>
+            <p class="calories">420 Kcals</p>
+            <p class="price">$8.99</p>
+            <p class="description">A fresh and creamy avocado salad with mixed greens.</p>
+            <a href="customize.html?name=Avocado%20Salad&price=8.99&type=salad" class="customize-btn">Customize</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build Your Own Section -->
+    <section class="menu-section" id="build-your-own">
+      <div class="build-your-own-banner">
+        <div class="banner-content">
+          <h2>Make your very own Frooti Smoothie</h2>
+          <a href="buildYourOwn.html?type=drink" class="blend-now-btn">Blend now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section class="menu-section" id="favorites">
+      <h1>Your Favorites</h1>
+      <p class="section-tagline">Items You've Hearted</p>
+      
+      <div class="menu-items" id="favorites-container">
+        <!-- Favorites will be populated dynamically -->
+        <div class="empty-favorites">
+          <p>You haven't added any favorites yet. Heart items while customizing to see them here!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="menu-section" id="drinks">
+      <h1>Drinks</h1>
+      <p class="section-tagline">Sip - Slurp - Go</p>
+      
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="pictures/1.png" alt="Strawberry Smoothie">
+          <div class="item-details">
+            <h3>Strawberry Passion</h3>
+            <p class="calories">720 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A refreshing strawberry smoothie with a hint of passionfruit.</p>
+            <a href="customize.html?name=Strawberry%20Passion&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/2.png" alt="Mango Smoothie">
+          <div class="item-details">
+            <h3>Mango Smoothie</h3>
+            <p class="calories">680 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A tropical mango smoothie with a hint of lime.</p>
+            <a href="customize.html?name=Mango%20Smoothie&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/3.png" alt="Berry Smoothie">
+          <div class="item-details">
+            <h3>Berry Smoothie</h3>
+            <p class="calories">650 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A fruity blend of mixed berries in a creamy base.</p>
+            <a href="customize.html?name=Berry%20Smoothie&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/4.png" alt="Green Smoothie">
+          <div class="item-details">
+            <h3>Green Smoothie</h3>
+            <p class="calories">580 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A vibrant green smoothie with spinach and cucumber.</p>
+            <a href="customize.html?name=Green%20Smoothie&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/5.png" alt="Tropical Smoothie">
+          <div class="item-details">
+            <h3>Tropical Paradise</h3>
+            <p class="calories">690 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A tropical blend of fruits in a creamy base.</p>
+            <a href="customize.html?name=Tropical%20Paradise&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/6.png" alt="Banana Smoothie">
+          <div class="item-details">
+            <h3>Banana Blast</h3>
+            <p class="calories">640 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A creamy banana smoothie with a hint of vanilla.</p>
+            <a href="customize.html?name=Banana%20Blast&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/7.png" alt="Chocolate Smoothie">
+          <div class="item-details">
+            <h3>Chocolate Dream</h3>
+            <p class="calories">750 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A rich chocolate smoothie with a hint of vanilla.</p>
+            <a href="customize.html?name=Chocolate%20Dream&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/8.png" alt="Peanut Butter Smoothie">
+          <div class="item-details">
+            <h3>Peanut Butter Cup</h3>
+            <p class="calories">820 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A creamy peanut butter smoothie with a hint of chocolate.</p>
+            <a href="customize.html?name=Peanut%20Butter%20Cup&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/9.png" alt="Coffee Smoothie">
+          <div class="item-details">
+            <h3>Coffee Energizer</h3>
+            <p class="calories">620 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A coffee-flavored smoothie with a hint of vanilla.</p>
+            <a href="customize.html?name=Coffee%20Energizer&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/10.png" alt="Protein Smoothie">
+          <div class="item-details">
+            <h3>Protein Power</h3>
+            <p class="calories">700 Kcals</p>
+            <p class="price">$7.99</p>
+            <p class="description">A protein-rich smoothie with a hint of vanilla.</p>
+            <a href="customize.html?name=Protein%20Power&price=7.99&type=drink" class="customize-btn">Customize</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bowls Section -->
+    <section class="menu-section" id="bowls">
+      <h1>Bowls</h1>
+      <p class="section-tagline">Eat - Chew - Recharge</p>
+      
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="pictures/drinks (1).png" alt="Strawberry Bowl">
+          <div class="item-details">
+            <h3>Strawberry Bowl</h3>
+            <p class="calories">720 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A delicious bowl packed with fresh strawberries and granola.</p>
+            <a href="customize.html?name=Strawberry%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (2).png" alt="Blueberry Bowl">
+          <div class="item-details">
+            <h3>Blueberry Bowl</h3>
+            <p class="calories">700 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A refreshing bowl packed with fresh blueberries and granola.</p>
+            <a href="customize.html?name=Blueberry%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (3).png" alt="Berry Bowl">
+          <div class="item-details">
+            <h3>Berry Bowl</h3>
+            <p class="calories">710 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A delicious bowl packed with mixed berries and granola.</p>
+            <a href="customize.html?name=Berry%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (4).png" alt="Green Bowl">
+          <div class="item-details">
+            <h3>Green Bowl</h3>
+            <p class="calories">650 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A vibrant green bowl with mixed greens and granola.</p>
+            <a href="customize.html?name=Green%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (5).png" alt="Tropical Bowl">
+          <div class="item-details">
+            <h3>Tropical Bowl</h3>
+            <p class="calories">730 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A tropical bowl with mixed fruits and granola.</p>
+            <a href="customize.html?name=Tropical%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (6).png" alt="Chocolate Bowl">
+          <div class="item-details">
+            <h3>Chocolate Bowl</h3>
+            <p class="calories">780 Kcals</p>
+            <p class="price">$9.99</p>
+            <p class="description">A rich chocolate bowl with mixed nuts and granola.</p>
+            <a href="customize.html?name=Chocolate%20Bowl&price=9.99&type=bowl" class="customize-btn">Customize</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Salads Section -->
+    <section class="menu-section" id="salads">
+      <h1>Salads</h1>
+      <p class="section-tagline">Relax - Refuel - Energize</p>
+      
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="pictures/drinks (7).png" alt="Garden Salad">
+          <div class="item-details">
+            <h3>Garden Salad</h3>
+            <p class="calories">320 Kcals</p>
+            <p class="price">$8.99</p>
+            <p class="description">A fresh garden salad with mixed greens and vegetables.</p>
+            <a href="customize.html?name=Garden%20Salad&price=8.99&type=salad" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (8).png" alt="Greek Salad">
+          <div class="item-details">
+            <h3>Greek Salad</h3>
+            <p class="calories">380 Kcals</p>
+            <p class="price">$8.99</p>
+            <p class="description">A delicious Greek salad with mixed greens, feta cheese, and olives.</p>
+            <a href="customize.html?name=Greek%20Salad&price=8.99&type=salad" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (10).png" alt="Chickpea Salad">
+          <div class="item-details">
+            <h3>Chickpea Salad</h3>
+            <p class="calories">380 Kcals</p>
+            <p class="price">$8.99</p>
+            <p class="description">A hearty chickpea salad with mixed greens and vegetables.</p>
+            <a href="customize.html?name=Chickpea%20Salad&price=8.99&type=salad" class="customize-btn">Customize</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="pictures/drinks (11).png" alt="Avocado Salad">
+          <div class="item-details">
+            <h3>Avocado Salad</h3>
+            <p class="calories">420 Kcals</p>
+            <p class="price">$8.99</p>
+            <p class="description">A fresh and creamy avocado salad with mixed greens.</p>
+            <a href="customize.html?name=Avocado%20Salad&price=8.99&type=salad" class="customize-btn">Customize</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="pictures/Official-logo (4).png" alt="Frooti Smoothie Logo">
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reward.html">Rewards</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="menu.html#drinks">Smoothies</a></li>
+            <li><a href="menu.html#bowls">Bowls</a></li>
+            <li><a href="menu.html#salads">Salads</a></li>
+            <li><a href="buildYourOwn.html">Build Your Own</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column contact-form">
+          <h3>Contact Us</h3>
+          <form class="mini-contact-form">
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/"><img src="pictures/instagram (1).png" alt="Instagram"></a>
+          <a href="https://www.youtube.com/"><img src="pictures/youtube (1).png" alt="YouTube"></a>
+          <a href="https://x.com/"><img src="pictures/twitter (1).png" alt="Twitter"></a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Frooti Smoothie. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script src="js/cart.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="js/menu-animations.js"></script>
+  <script>
+    // Allergen data for each menu item
+    const allergenData = {
+      'Strawberry Passion': ['milk'],
+      'Mango Smoothie': ['milk'],
+      'Berry Smoothie': ['milk'],
+      'Green Smoothie': ['milk'],
+      'Tropical Paradise': ['milk'],
+      'Banana Blast': ['milk'],
+      'Chocolate Dream': ['milk', 'soy'],
+      'Peanut Butter Cup': ['milk', 'peanut'],
+      'Coffee Energizer': ['milk'],
+      'Protein Power': ['milk', 'soy'],
+      'Strawberry Bowl': ['milk', 'treenut'],
+      'Blueberry Bowl': ['milk', 'treenut'],
+      'Berry Bowl': ['milk', 'treenut'],
+      'Green Bowl': ['milk', 'treenut', 'soy'],
+      'Tropical Bowl': ['milk', 'treenut'],
+      'Chocolate Bowl': ['milk', 'treenut', 'soy'],
+      'Garden Salad': ['egg', 'soy'],
+      'Greek Salad': ['milk', 'egg'],
+      'Avocado Salad': ['egg', 'sesame'],
+      'Chickpea Salad': ['egg', 'soy']
+    };
+    
+    // Allergen descriptions
+    const allergenDescriptions = {
+      'peanut': 'Contains or may contain peanuts',
+      'treenut': 'Contains or may contain tree nuts (almonds, walnuts, etc.)',
+      'milk': 'Contains dairy products',
+      'egg': 'Contains eggs or egg-based ingredients',
+      'wheat': 'Contains wheat or gluten',
+      'soy': 'Contains soy or soy-based ingredients',
+      'fish': 'Contains fish or fish-derived ingredients',
+      'shellfish': 'Contains shellfish or shellfish-derived ingredients',
+      'sesame': 'Contains sesame seeds or sesame oil'
+    };
+    
+    // Function to handle allergen filtering
+    function handleAllergenFilter() {
+      // Get all checked allergens
+      const checkedAllergens = Array.from(document.querySelectorAll('.allergen-checkbox:checked'))
+        .map(checkbox => checkbox.value);
+      
+      // Save selected allergens to localStorage
+      localStorage.setItem('selectedAllergens', JSON.stringify(checkedAllergens));
+      
+      // Get all menu items
+      const menuItems = document.querySelectorAll('.menu-item');
+      
+      // Process each menu item
+      menuItems.forEach(item => {
+        // Get the item name
+        const itemName = item.querySelector('h3').textContent;
+        
+        // Remove any existing warning
+        const existingWarning = item.querySelector('.allergen-warning');
+        if (existingWarning) {
+          item.removeChild(existingWarning);
+        }
+        
+        // Check if the item contains any of the selected allergens
+        const itemAllergens = allergenData[itemName] || [];
+        const matchingAllergens = checkedAllergens.filter(allergen => 
+          itemAllergens.includes(allergen)
+        );
+        
+        // If there are matching allergens, add a warning
+        if (matchingAllergens.length > 0) {
+          const warningElement = document.createElement('div');
+          warningElement.className = 'allergen-warning';
+          warningElement.innerHTML = '<i class="bx bx-error"></i>';
+          
+          // Create tooltip with allergen information
+          const tooltipText = matchingAllergens.map(allergen => 
+            allergenDescriptions[allergen]
+          ).join('<br>');
+          
+          const tooltip = document.createElement('span');
+          tooltip.className = 'allergen-tooltip';
+          tooltip.innerHTML = tooltipText;
+          
+          warningElement.appendChild(tooltip);
+          item.appendChild(warningElement);
+        }
+      });
+    }
+    
+    // Load saved allergens and set up event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load saved allergens from localStorage
+      const savedAllergens = JSON.parse(localStorage.getItem('selectedAllergens')) || [];
+      
+      // Check the corresponding checkboxes
+      const allergenCheckboxes = document.querySelectorAll('.allergen-checkbox');
+      allergenCheckboxes.forEach(checkbox => {
+        if (savedAllergens.includes(checkbox.value)) {
+          checkbox.checked = true;
+        }
+        
+        // Add change event listener
+        checkbox.addEventListener('change', handleAllergenFilter);
+      });
+      
+      // Apply allergen filtering with saved preferences
+      handleAllergenFilter();
+      
+      // Allergen dropdown toggle
+      const allergenToggle = document.getElementById('allergenDropdownToggle');
+      const allergenOptions = document.getElementById('allergenOptions');
+      
+      allergenToggle.addEventListener('click', function() {
+        allergenOptions.style.display = allergenOptions.style.display === 'none' ? 'flex' : 'none';
+        allergenToggle.classList.toggle('active');
+      });
+      
+      // Load favorites
+      loadFavorites();
+      
+      // Update cart count
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cartCount').innerText = totalItems;
+    });
+    
+    function goToCustomize(name, price, type) {
+      window.location.href = `customize.html?name=${encodeURIComponent(name)}&price=${price}&type=${type}`;
+    }
+    
+    // Function to load favorites
+    function loadFavorites() {
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const favoritesContainer = document.getElementById('favorites-container');
+      
+      if (favorites.length === 0) {
+        favoritesContainer.innerHTML = `
+          <div class="empty-favorites">
+            <p>You haven't added any favorites yet. Heart items while customizing to see them here!</p>
+          </div>
+        `;
+        return;
+      }
+      
+      favoritesContainer.innerHTML = '';
+      
+      favorites.forEach(favorite => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'menu-item';
+        
+        itemDiv.innerHTML = `
+          <img src="${favorite.image}" alt="${favorite.name}">
+          <h3>${favorite.name}</h3>
+          <p>${favorite.calories} Kcals</p>
+          <button class="customize-btn" onclick="goToCustomize('${favorite.name}', ${favorite.price}, '${favorite.type}')">CUSTOMIZE</button>
+        `;
+        
+        favoritesContainer.appendChild(itemDiv);
+      });
+    }
+  </script>
+</body>
+</html>

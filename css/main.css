@@ -1,0 +1,45 @@
+/*-- FONTS ---*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*----------- COLORS -------------*/
+:root {
+  --white: #f9f9f9;
+  --black: #32312b;
+  --primary: #ffc9c4; 
+  --secondary: #e86864;
+  --tertiary: #4b9939;
+  --fourth: #d8a8d2;
+  --fifth: #461b00;
+}
+
+#preloader{
+  background: url(../pictures/Untitled\ design\ \(1\).gif) no-repeat center center;
+  background-size: 80%; /* Makes the GIF smaller */
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  background-color: var(--white);
+  animation: speedup 0.1s linear forwards; /* Speeds up the GIF */
+}
+
+/* Animation to speed up the GIF */
+@keyframes speedup {
+  to {
+    background-size: 80%;
+  }
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: var(--white);
+}
+
+html{
+  scrollbar-width: thin;
+}

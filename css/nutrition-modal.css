@@ -1,0 +1,59 @@
+/* Nutrition Modal Styles */
+.nutrition-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nutrition-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nutrition-content h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-family: 'Raleway', sans-serif;
+}
+
+.close-modal {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.close-modal:hover {
+  background-color: var(--primary);
+}
+

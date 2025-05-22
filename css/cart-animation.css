@@ -1,0 +1,110 @@
+/* Add to Cart Animation */
+.cart-animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cart-animation-overlay.active {
+  opacity: 1;
+}
+
+.cart-animation-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cart-animation-content.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cart-success-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.cart-success-icon i {
+  font-size: 40px;
+  color: white;
+}
+
+.cart-animation-content h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.cart-animation-content p {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.cart-animation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cart-animation-buttons button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-animation-buttons button:first-child {
+  background-color: #f0f0f0;
+  border: none;
+  color: #333;
+}
+
+.cart-animation-buttons button:last-child {
+  background-color: var(--secondary);
+  border: none;
+  color: white;
+}
+
+.cart-animation-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+
+  <title>Frooti Smoothie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="pictures/icon-logo.png" type="image/icon type">
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Header icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+
+
+<body>
+
+    <div id="preloader"></div>
+  <header>
+
+    <div class="NavandHeader">
+      <!-- Header logo -->
+      <a id="logo" href="index.html"><img src="pictures/Official-logo (4).png" alt="Frootie Smoothie"></a>
+
+      <!-- Header pages -->
+      <ul class="navbar">
+        <li><a class="active" id="menu">Menu</a></li>
+        <li><a class="active" id="rewards">Rewards</a></li>
+        <li><a class="active" id="about">About</a></li>
+      </ul>
+
+      <div class="main">
+        <i class="bx bx-menu" id="menu-icon"></i>
+      </div>
+    </div>
+
+    <ul class="navbar1">
+      <a class="order-button" href="menu.html">
+        ORDER
+      </a>
+
+      <button id="loginBtn"><img height="32" width="32" src="pictures/account-circle-line.svg" class="profile-icon"/></button>
+      <img id="profileIcon" alt="Profile" />
+    
+      <a href="cart.html" id="cartIcon" style="position: relative;">
+        <i class="bx bx-cart" id="cart"></i>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+    </ul>
+  </header>
+
+  <div class="cart-title"><h1>Checkout</h1></div>
+  <div class="cart-page">
+
+
+    <div class="other-information">
+
+      <div class="Delivery-pickup-information">
+        <div id="deliveryInfo"></div>
+        <button onclick="window.location.href='delivery.html'" class="delivery-button">Change Address</button>
+      </div>
+
+      <div class="card-information">
+        <h2>Payment Details</h2>
+        <p>Not required due to TSA purposes.*</p>
+        <form>
+          <label for="name">Name on Card</label>
+          <input type="text" id="name" placeholder="John Doe" required>
+
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" maxlength="16" placeholder="1234 5678 9012 3456" required>
+
+          <div class="row">
+            <div style="flex: 1;">
+              <label for="expiry">Expiry</label>
+              <input type="text" id="expiry" placeholder="MM/YY" required>
+            </div>
+            <div style="flex: 1;">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" maxlength="4" placeholder="123" required>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+
+
+    <div class="cart-information">
+      <div class="cart-information-holder">
+
+          <div class="abs-delivery">
+            <h2>Your Cart</h2>
+          </div>
+
+          <div class="full-price">
+            <div class="cart-container" id="cartItems"></div>
+            <div id="total"></div>
+          </div>
+
+          <button id="purchaseBtn" class="purchase-button">Complete Purchase</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script src="js/cart.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
+  <div id="purchaseConfirmationOverlay" class="purchase-confirmation-overlay">
+    <div class="purchase-confirmation-content">
+      <div class="confirmation-icon">
+        <i class='bx bx-check-circle'></i>
+      </div>
+      <h3>Purchase Complete!</h3>
+      <p>Thank you for your order.</p>
+      <div class="order-animation">
+        <div class="delivery-truck">
+          <i class='bx bxs-truck'></i>
+        </div>
+        <div class="route-line"></div>
+        <div class="destination">
+          <i class='bx bxs-home'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="emptyCartOverlay" class="empty-cart-overlay">
+    <div class="empty-cart-content">
+      <div class="empty-icon">
+        <i class='bx bx-cart-alt'></i>
+      </div>
+      <h3>Empty Cart</h3>
+      <p>Your cart is empty! Add items before purchasing.</p>
+      <button id="emptyCartCloseBtn">OK</button>
+      <button id="browseMenuBtn">Browse Menu</button>
+    </div>
+  </div>
+</body>
+</html>
