@@ -196,29 +196,72 @@ h2{
   color: var(--white);
 }
 
-.delivery-button{
+.delivery-pickup-information {
+  height: auto;
+  min-height: 200px;
+  width: 550px;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background-color: var(--secondary);
+  filter: drop-shadow(20px 20px 0px var(--primary));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.delivery-info-title {
+  font-family: Fredoka;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--white);
+  margin: 0;
+  margin-bottom: 15px;
+  align-self: flex-start;
+  padding-left: 20px;
+}
+
+#deliveryInfo {
+  width: 90%;
+  font-family: Raleway;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.delivery-info-content {
+  width: 100%;
+}
+
+.delivery-button {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: 10px;
-  margin-bottom: 20px;
   color: var(--black);
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   
   width: 85%;
   border-radius: 30px;
   border: none;
   font-family: Raleway;
   font-size: 14px;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
 
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(240, 240, 240);
   transition: 0.2s ease-in-out;
 
-  &:hover{
-    background-color: rgb(201, 201, 201);
+  &:hover {
+    background-color: rgb(220, 220, 220);
     cursor: pointer;
   }
 }
@@ -250,34 +293,6 @@ h2{
   }
 }
 
-.delivery-pickup-information{
-  height: 200px;
-  width: 550px;
-  border-radius: 10px;
-
-  background-color: var(--secondary);
-  filter: drop-shadow(20px 20px 0px var(--primary));
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#deliveryInfo{
-  width: 90%;
-  font-family: Raleway;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  margin-top: 20px;
-  font-weight: 500;
-
-  color: var(--white);
-}
-
-
-
-
 .card-information{
   height: 350px;
   width: 550px;
@@ -305,7 +320,7 @@ h2{
   margin-bottom: 20px;
   margin-top: 2px;
   font-size: 10px;
-  color: rgb(197, 197, 197);
+  color: white ;
   font-family: Raleway;
 }
 
@@ -409,8 +424,9 @@ h2{
     width: 350px;
   }
 
-  .delivery-pickup-information{
+  .delivery-pickup-information {
     width: 400px;
+    min-height: 180px;
   }
 
   .card-information{
@@ -470,9 +486,10 @@ h2{
     width: 300px;
   }
 
-  .delivery-pickup-information{
+  .delivery-pickup-information {
     width: 350px;
-        filter: none;
+    filter: none;
+    min-height: 320px;
   }
 
   .card-information{
@@ -507,6 +524,14 @@ h2{
 
   }
 
+  .delivery-info-title {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+  
+  #deliveryInfo {
+    padding: 8px 15px;
+  }
 }
 
 /* Purchase Confirmation Popup */
