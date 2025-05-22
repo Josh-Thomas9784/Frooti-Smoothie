@@ -152,6 +152,14 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
+  <script>
+    // Update cart count dynamically -- CART
+    const cartCountElement = document.getElementById('cartCount');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.innerText = totalItems;
+  </script>
+
   <script src="js/customize.js"></script>
   <script src="js/index.js"></script>
   <script src="js/app.js"></script>
