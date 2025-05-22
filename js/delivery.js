@@ -24,7 +24,7 @@ let estimationText = document.getElementById('estimationText');
 // Add "Enter" button 
 const enterBtn = document.createElement('button');
 enterBtn.id = 'enterBtn';
-enterBtn.textContent = 'Enter';
+enterBtn.textContent = 'Calculate Time';
 
 
 const geocoderContainer = document.getElementById('geocoder-container');
@@ -196,7 +196,7 @@ deliveryType.addEventListener('change', function() {
 // "Enter" button draws the route
 enterBtn.addEventListener('click', () => {
   if (!selectedCoords) {
-    alert('Please enter a valid address.');
+    showValidationError('Please enter a valid address.');
     return;
   }
   const nearest = getClosestStore(selectedCoords);
@@ -206,7 +206,7 @@ enterBtn.addEventListener('click', () => {
 // "Continue" button proceeds to cart
 validateBtn.addEventListener('click', () => {
   if (!selectedCoords || !selectedPlaceName) {
-    alert('Please select a valid address from the suggestions.');
+    showValidationError('Please select a valid address from the suggestions.');
     return;
   }
 
@@ -223,3 +223,36 @@ validateBtn.addEventListener('click', () => {
 
   window.location.href = 'cart.html';
 });
+
+function showValidationError(message) {
+  // Create popup element
+  const popup = document.createElement('div');
+  popup.className = 'location-error-overlay';
+  popup.innerHTML = `
+    <div class="location-error-content">
+      <div class="error-icon">
+        <i class='bx bx-error-circle'></i>
+      </div>
+      <p>${message}</p>
+      <button id="errorCloseBtn">OK</button>
+    </div>
+  `;
+  
+  // Add to document
+  document.body.appendChild(popup);
+  
+  // Show with animation
+  setTimeout(() => {
+    popup.classList.add('active');
+    popup.querySelector('.location-error-content').classList.add('active');
+  }, 10);
+  
+  // Add event listener to close button
+  document.getElementById('errorCloseBtn').addEventListener('click', function() {
+    popup.classList.remove('active');
+    popup.querySelector('.location-error-content').classList.remove('active');
+    setTimeout(() => {
+      popup.remove();
+    }, 300);
+  });
+}

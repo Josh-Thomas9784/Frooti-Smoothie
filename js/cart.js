@@ -6,10 +6,27 @@ if (!deliveryData) window.location.href = 'delivery.html';
 // Update the delivery info display to include estimated time
 if (deliveryData) {
   const deliveryInfoElement = document.getElementById('deliveryInfo');
-  let infoText = `${deliveryData.type.toUpperCase()} - ${deliveryData.address}`;
+  
+  // Format the delivery type with proper capitalization
+  const formattedType = deliveryData.type.charAt(0).toUpperCase() + deliveryData.type.slice(1);
+  
+  let infoText = `<strong>${formattedType}</strong><br>${deliveryData.address}`;
   
   if (deliveryData.estimatedTime) {
-    infoText += `<br>${deliveryData.estimatedTime}`;
+    // Clean up the estimated time text to remove HTML tags if present
+    let cleanEstimatedTime = deliveryData.estimatedTime;
+    if (cleanEstimatedTime.includes('<strong>')) {
+      // Extract just the time information
+      if (deliveryData.type === 'delivery') {
+        cleanEstimatedTime = `Estimated Delivery: ${cleanEstimatedTime.match(/(\d+) minutes/)[0]}`;
+      } else {
+        cleanEstimatedTime = cleanEstimatedTime.replace(/<strong>|<\/strong>|<br>/g, '')
+          .replace('Pickup Location:', 'Location:')
+          .replace('Ready In:', 'Ready in');
+      }
+    }
+    
+    infoText += `<br><span class="estimated-time">${cleanEstimatedTime}</span>`;
   }
   
   deliveryInfoElement.innerHTML = infoText;
